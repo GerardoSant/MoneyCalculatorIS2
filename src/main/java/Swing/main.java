@@ -15,8 +15,9 @@ public class main {
         CurrencyListLoader currencyListLoader = new RestCurrencyListLoader();
         ExchangeRateLoader exchangeRateLoader = new RestExchangeRateLoader();
         MainFrame mainFrame = new MainFrame(currencyListLoader.currencies());
-        mainFrame.add("calculate",new CalculateCommand(mainFrame.getMoneyDialog(),mainFrame.getMoneyDisplay(),
+        mainFrame.addCommand("Calculate",new CalculateCommand(mainFrame.getMoneyDialog(),mainFrame.getMoneyDisplay(),
                 exchangeRateLoader));
+        mainFrame.execute();
 
     }
 }

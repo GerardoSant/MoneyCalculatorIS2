@@ -23,30 +23,32 @@ public class MainFrame extends JFrame {
         this.currencies = currencies;
         commands = new HashMap<String, Command>();
         createUI();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setLocationRelativeTo(null);
     }
 
-    public void add(String commandKey, Command command){
+    public void execute(){
+        setVisible(true);
+    }
+
+    public void addCommand(String commandKey, Command command){
         commands.put(commandKey,command);
     }
 
     private void createUI(){
-        setTitle("MoneyCalculator");
+        setTitle("Money Calculator");
         moneyDialog=new SwingMoneyDialog(currencies);
         add( (Component) moneyDialog,BorderLayout.NORTH);
         moneyDisplay=new SwingMoneyDisplay();
         add((Component) moneyDisplay, BorderLayout.CENTER);
-        JButton calculateButton = new JButton("Calculate");
-        calculateButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println(moneyDialog.get().getAmount() + " " + moneyDialog.get().getCurrency().toString());
-                commands.get("calculate").execute();
-            }
-        });
-        add(calculateButton,BorderLayout.SOUTH);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        pack();
-        setLocationRelativeTo(null);
-        setVisible(true);
+        add(calculateButton(),BorderLayout.SOUTH);
+    }
+
+    private JButton calculateButton(){
+        JButton button = new JButton("Calculate");
+        button.addActionListener(e -> commands.get(button.getText()).execute());
+        return button;
     }
 
 

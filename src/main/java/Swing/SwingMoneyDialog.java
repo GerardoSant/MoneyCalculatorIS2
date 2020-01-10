@@ -29,7 +29,7 @@ public class SwingMoneyDialog extends JPanel implements MoneyDialog {
         String currencyID= currencyIDList.getSelectedItem().toString();
         for (Currency currency : currencyList){
             if (currency.getID().equals(currencyID)){
-                return new Currency(currency.getCurrencyName(),currency.getCurrencySymbol(), currency.getID());
+                return currency;
             }
         }
         return null;
