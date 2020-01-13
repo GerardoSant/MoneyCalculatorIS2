@@ -1,4 +1,4 @@
-package View.Persistence;
+package Implementation.RestPersistence;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,6 +6,7 @@ import java.util.List;
 
 
 import Model.Currency;
+import View.Persistence.CurrencyListLoader;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

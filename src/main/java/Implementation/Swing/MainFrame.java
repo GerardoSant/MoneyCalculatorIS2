@@ -1,4 +1,4 @@
-package Swing;
+package Implementation.Swing;
 
 import Controller.Command;
 import Model.Currency;
@@ -7,8 +7,6 @@ import View.MoneyDisplay;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,14 +21,19 @@ public class MainFrame extends JFrame {
         this.currencies = currencies;
         commands = new HashMap<String, Command>();
         createUI();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        pack();
-        setLocationRelativeTo(null);
+        setFrameSettings();
     }
 
     public void execute(){
         setVisible(true);
     }
+
+    private void setFrameSettings() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setLocationRelativeTo(null);
+    }
+
 
     public void addCommand(String commandKey, Command command){
         commands.put(commandKey,command);
@@ -50,8 +53,7 @@ public class MainFrame extends JFrame {
         button.addActionListener(e -> commands.get(button.getText()).execute());
         return button;
     }
-
-
+    
     public MoneyDialog getMoneyDialog() {
         return moneyDialog;
     }

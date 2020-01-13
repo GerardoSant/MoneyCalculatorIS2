@@ -1,17 +1,15 @@
-package Swing;
+package Implementation.Swing;
 
 import Controller.CalculateCommand;
 import View.Persistence.CurrencyListLoader;
 import View.Persistence.ExchangeRateLoader;
-import View.Persistence.RestCurrencyListLoader;
-import View.Persistence.RestExchangeRateLoader;
-import Swing.MainFrame;
+import Implementation.RestPersistence.RestCurrencyListLoader;
+import Implementation.RestPersistence.RestExchangeRateLoader;
+
 
 public class main {
 
     public static void main(String[] args) {
-
-
         CurrencyListLoader currencyListLoader = new RestCurrencyListLoader();
         ExchangeRateLoader exchangeRateLoader = new RestExchangeRateLoader();
         MainFrame mainFrame = new MainFrame(currencyListLoader.currencies());

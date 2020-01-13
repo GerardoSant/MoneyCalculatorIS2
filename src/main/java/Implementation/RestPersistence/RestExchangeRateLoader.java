@@ -1,7 +1,8 @@
-package View.Persistence;
+package Implementation.RestPersistence;
 
 import Model.Currency;
 import Model.ExchangeRate;
+import View.Persistence.ExchangeRateLoader;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;

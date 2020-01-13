@@ -1,4 +1,4 @@
-package Swing;
+package Implementation.Swing;
 
 import Model.Currency;
 import Model.Money;
