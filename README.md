@@ -15,3 +15,5 @@ Backend
 * [Currency Converter API](https://www.currencyconverterapi.com/) - REST API for currency conversion
 
 ## Preview
+
+![alt-text](https://github.com/GerardoSant/MoneyCalculatorIS2/blob/master/gifs/preview.gif)
